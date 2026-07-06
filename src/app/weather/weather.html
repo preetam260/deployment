@@ -1,0 +1,30 @@
+<h2> Weather </h2>
+
+<button (click)="loadWeather()">Get Weather</button>
+<p *ngIf = "isLoading">Loading...</p>
+<p *ngIf = "errorMessage"> {{errorMessage}} </p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temperature (C)</th>
+      <th>Temperature (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let forecast of weatherData">
+
+      <td>{{ forecast.date }}</td>
+      <td>{{ forecast.temperatureC }}</td>
+      <td>{{ forecast.temperatureF }}</td>
+      <td>{{ forecast.summary }}</td>
+
+    </tr>
+
+  </tbody>
+
+</table>
